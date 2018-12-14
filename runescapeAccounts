@@ -1,0 +1,65 @@
+using System;
+
+namespace Classes_and_Methods
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Runescape_Player player1 = new Runescape_Player("Lowsdp", 
+                126, true);
+
+            Runescape_Player player2 = new Runescape_Player("Fatchoode", 
+                119, false);    
+
+            player1.ShowPlayer();
+            player2.ShowPlayer();     
+
+        }
+
+        public class Runescape_Player
+        {
+
+            public string username { get; set; }
+            public int level { get; set; }
+            public bool mem_status { get; set; }
+
+
+            public Runescape_Player(string username, 
+                int level, 
+                bool mem_status)
+            {
+                this.username = username;
+                this.level = level;
+                this.mem_status = mem_status;
+            }
+
+             public void ShowPlayer()
+             {
+
+                string status = "";
+                
+                 if (mem_status)
+                 {
+                     status = "active";
+                 }
+
+                 else
+                 {
+                     status = "inactive";
+                 }
+                 
+                 Console.WriteLine("Your username is {0}. Your level is {1}" +
+                    " and your membership status is {2}.", 
+                    this.username, 
+                    this.level,
+                    status);  
+
+             }
+
+        }
+
+    }
+
+}
